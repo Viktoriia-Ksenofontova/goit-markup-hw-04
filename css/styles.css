@@ -97,8 +97,16 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-.navig-list .current {
+.navig.link.current {
   color: var(--accent-color);
+  padding-bottom: 0;
+}
+.navig.link.current::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-top: 28px;
 }
 
 .main-navig-address .telephone,
@@ -151,13 +159,11 @@ footer .container {
 footer .logo {
   display: block;
   margin-bottom: 20px;
-
   color: var(--primary-white);
 }
 .contact-info {
   display: flex;
   flex-direction: column;
-
   line-height: 1.71;
   font-style: normal;
   letter-spacing: 0.03em;
@@ -171,18 +177,40 @@ footer .logo {
 }
 .call-to-action {
   margin-bottom: 20px;
-
   font-weight: 700;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.footer-center .social-list {
-  justify-content: space-between;
+
+.footer-center .link {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.footer-center .social-list-item.link {
-  display: block;
-  color: var(--primary-white);
+.footer-center .instagram {
+  background-image: url(../images/social-icon/instagram.svg);
+}
+.footer-center .twitter {
+  background-image: url(../images/social-icon/twitter.svg);
+}
+.footer-center .facebook {
+  background-image: url(../images/social-icon/facebook.svg);
+}
+.footer-center .linkedin {
+  background-image: url(../images/social-icon/linkedin.svg);
+}
+.footer-center .social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-center .link:hover,
+.footer-center .link:focus {
+  background-color: var(--accent-color);
 }
 /* стилизация основной части index.html*/
 
@@ -190,6 +218,15 @@ footer .logo {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  max-width: 1600px;
+  background-color: rgba(47, 48, 58, 0.8);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hero-title {
   margin-top: 0;
@@ -198,7 +235,6 @@ footer .logo {
   margin-bottom: 30px;
 
   color: var(--primary-white);
-  background-color: rgba(47, 48, 58, 0.8);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -240,12 +276,28 @@ footer .logo {
 .team-item:not(:last-child) {
   margin-right: 30px;
 }
-.preference-item img {
+.preference-subtitle::before {
+  content: '';
+  display: block;
+  min-width: 270px;
+  height: 120px;
+  background-color: var(--filter-background-color);
   margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.preference-subtitle.attention::before {
+  background-image: url(../images/antenna.svg);
+}
+.preference-subtitle.punctuality::before {
+  background-image: url(../images/clock.svg);
+}
+.preference-subtitle.planning::before {
+  background-image: url(../images/diagram.svg);
+}
+.preference-subtitle.technologies::before {
+  background-image: url(../images/astronaut.svg);
 }
 .preference-subtitle {
   margin-bottom: 10px;
@@ -299,7 +351,7 @@ footer .logo {
 }
 .team-item {
   padding-bottom: 24px;
-
+  background-color: var(--primary-white);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
@@ -390,14 +442,19 @@ footer .logo {
   color: var(--primary-white);
   background-color: var(--accent-color);
 }
+.filter-btn:hover,
+.filter-btn:focus {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
 .works-examples {
   flex-wrap: wrap;
 }
 .works-examples-item {
-  width: 370px;
+  max-width: 370px;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
-  padding-bottom: 20px;
 }
 .works-examples-item:not(:nth-child(3n)) {
   margin-right: 30px;
@@ -407,6 +464,12 @@ footer .logo {
 }
 .works-examples-link {
   display: block;
+  padding-bottom: 20px;
+}
+.works-examples-link:hover,
+.works-examples-link:focus {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .works-examples-item img {
   margin-bottom: 20px;

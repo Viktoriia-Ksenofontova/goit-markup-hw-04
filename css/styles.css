@@ -197,27 +197,19 @@ footer .logo {
 }
 
 .footer-center .link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   height: 44px;
   width: 44px;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
-.footer-center .instagram {
-  background-image: url(../images/social-icon/instagram.svg);
+
+.footer-center .social-icons {
+  fill: var(--primary-white);
 }
-.footer-center .twitter {
-  background-image: url(../images/social-icon/twitter.svg);
-}
-.footer-center .facebook {
-  background-image: url(../images/social-icon/facebook.svg);
-}
-.footer-center .linkedin {
-  background-image: url(../images/social-icon/linkedin.svg);
-}
+
 .footer-center .social-list-item:not(:last-child) {
   margin-right: 10px;
 }
